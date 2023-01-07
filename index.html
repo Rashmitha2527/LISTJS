@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIST</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+    
+
+        }
+        input{
+            height: 20px;
+            width: 250px;
+             margin: 14px;
+             border-radius: 10px;
+        }
+        button{
+            height: 20px;
+            width: 100px;
+            margin-top: 15px;
+            display: flex;justify-content: center;
+            align-items: center;
+            background-color: rgb(219, 215, 215);
+           
+            border-radius: 5px;
+        }
+        .listclass button1{
+            width: 15%;
+            margin-top: 10px;
+            
+        }
+        .li{
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin-left: 100px;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 style="color: skyblue;">My Shopping List</h1>
+    <div class="container">
+        <p style="color: rgb(36, 233, 14);">Enter a New Item :</p>
+        <input type="text" id="input">
+        <button onclick="addItem()">Add Item</button></div>
+        <ul id="list">
+
+        </ul>
+        
+    
+    <script>
+        
+         let count = 1;
+        function addItem() {
+             var input = document.getElementById("input")
+             var li = document.createElement("li")
+            li.setAttribute("class", `listclass${count}`)
+            var button = document.createElement("button")
+            button.onClick = "listDelete()"
+            li.innerHTML = ` ${input.value}<button onClick="listDelete()" class="button1${count}">Delete</button>`
+             var list1 = document.getElementById("list")
+               list1.appendChild(li)
+              count++;
+           }
+    </script>
+    
+</body>
+</html>
