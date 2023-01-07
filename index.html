@@ -65,8 +65,8 @@
             var button = document.createElement("button")
             button.onClick = "listDelete()"
             li.innerHTML = ` ${input.value}<button onClick="listDelete()" class="button1${count}">Delete</button>`
-             var list1 = document.getElementById("list")
-               list1.appendChild(li)
+             var mainlist = document.getElementById("list")
+               mainlist.appendChild(li)
               count++;
            }
     </script>
